@@ -1,0 +1,18 @@
+QMAKE_DEFAULT_INCDIRS = \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/arm-linux-gnueabihf/include/c++/6.3.1 \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/arm-linux-gnueabihf/include/c++/6.3.1/arm-linux-gnueabihf \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/arm-linux-gnueabihf/include/c++/6.3.1/backward \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/lib/gcc/arm-linux-gnueabihf/6.3.1/include \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/lib/gcc/arm-linux-gnueabihf/6.3.1/include-fixed \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/arm-linux-gnueabihf/include \
+    D:/BeagleBoneDebian-9-sysroot/usr/include/arm-linux-gnueabihf \
+    D:/BeagleBoneDebian-9-sysroot/usr/include
+QMAKE_DEFAULT_LIBDIRS = \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/lib/gcc/arm-linux-gnueabihf/6.3.1 \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/lib/gcc/arm-linux-gnueabihf \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/lib/gcc \
+    d:/gcc-linaro-6.3.1-2017.05-i686-mingw32_arm-linux-gnueabihf/arm-linux-gnueabihf/lib \
+    D:/BeagleBoneDebian-9-sysroot/lib/arm-linux-gnueabihf \
+    D:/BeagleBoneDebian-9-sysroot/lib \
+    D:/BeagleBoneDebian-9-sysroot/usr/lib/arm-linux-gnueabihf \
+    D:/BeagleBoneDebian-9-sysroot/usr/lib
