@@ -293,7 +293,7 @@ VISCA_set_zoom_stop(VISCAInterface_t *iface, VISCACamera_t *camera)
   _VISCA_append_byte(&packet, VISCA_COMMAND);
   _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
   _VISCA_append_byte(&packet, VISCA_ZOOM);
-  _VISCA_append_byte(&packet, VISCA_ZOOM_STOP);
+  _VISCA_append_byte(&packet, VISCA_STOP);//VISCA_ZOOM_STOP);
 
   return _VISCA_send_packet_with_reply(iface, camera, &packet);
 }
@@ -393,7 +393,7 @@ VISCA_set_dzoom_limit(VISCAInterface_t *iface, VISCACamera_t *camera, uint32_t l
   _VISCA_init_packet(&packet);
   _VISCA_append_byte(&packet, VISCA_COMMAND);
   _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
-  _VISCA_append_byte(&packet, VISCA_DZOOM_LIMIT);
+//TODO:  _VISCA_append_byte(&packet, VISCA_DZOOM_LIMIT);
   _VISCA_append_byte(&packet, limit);
 
   return _VISCA_send_packet_with_reply(iface, camera, &packet);
@@ -454,7 +454,7 @@ VISCA_set_focus_stop(VISCAInterface_t *iface, VISCACamera_t *camera)
   _VISCA_append_byte(&packet, VISCA_COMMAND);
   _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
   _VISCA_append_byte(&packet, VISCA_FOCUS);
-  _VISCA_append_byte(&packet, VISCA_FOCUS_STOP);
+  _VISCA_append_byte(&packet, VISCA_STOP);//VISCA_FOCUS_STOP);
 
   return _VISCA_send_packet_with_reply(iface, camera, &packet);
 }
@@ -1639,7 +1639,7 @@ VISCA_get_dzoom_limit(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t *v
   _VISCA_init_packet(&packet);
   _VISCA_append_byte(&packet, VISCA_INQUIRY);
   _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
-  _VISCA_append_byte(&packet, VISCA_DZOOM_LIMIT);
+//TODO:  _VISCA_append_byte(&packet, VISCA_DZOOM_LIMIT);
   err=_VISCA_send_packet_with_reply(iface, camera, &packet);
   if (err!=VISCA_SUCCESS)
     return err;

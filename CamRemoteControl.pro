@@ -37,12 +37,14 @@ SOURCES += main.cpp\
     VISCA.cpp \
     libvisca.c \
     camera.cpp \
-    serialport.cpp
+    serialport.cpp \
+    er8300.cpp
 
 HEADERS  += mainwindow.h \
     libvisca.h \
     VISCA.h \
     camera.h \
-    serialport.h
+    serialport.h \
+    er8300.h
 
 FORMS    += mainwindow.ui

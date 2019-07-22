@@ -53,24 +53,28 @@ SOURCES       = main.cpp \
 		VISCA.cpp \
 		libvisca.c \
 		camera.cpp \
-		serialport.cpp moc_mainwindow.cpp
+		serialport.cpp \
+		er8300.cpp moc_mainwindow.cpp
 OBJECTS       = main.obj \
 		mainwindow.obj \
 		VISCA.obj \
 		libvisca.obj \
 		camera.obj \
 		serialport.obj \
+		er8300.obj \
 		moc_mainwindow.obj
 DIST          =  mainwindow.h \
 		libvisca.h \
 		VISCA.h \
 		camera.h \
-		serialport.h main.cpp \
+		serialport.h \
+		er8300.h main.cpp \
 		mainwindow.cpp \
 		VISCA.cpp \
 		libvisca.c \
 		camera.cpp \
-		serialport.cpp
+		serialport.cpp \
+		er8300.cpp
 QMAKE_TARGET  = CamRemoteControl
 DESTDIR       = 
 TARGET        = CamRemoteControl
@@ -341,8 +345,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@if not exist $(DISTDIR) mkdir $(DISTDIR) & if not exist $(DISTDIR) exit 1
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)\
-	$(COPY_FILE) --parents mainwindow.h libvisca.h VISCA.h camera.h serialport.h $(DISTDIR)\
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp VISCA.cpp libvisca.c camera.cpp serialport.cpp $(DISTDIR)\
+	$(COPY_FILE) --parents mainwindow.h libvisca.h VISCA.h camera.h serialport.h er8300.h $(DISTDIR)\
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp VISCA.cpp libvisca.c camera.cpp serialport.cpp er8300.cpp $(DISTDIR)\
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)\
 
 
@@ -1099,11 +1103,15 @@ libvisca.obj: libvisca.c libvisca.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o libvisca.obj libvisca.c
 
 camera.obj: camera.cpp camera.h \
+		VISCA.h \
 		serialport.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o camera.obj camera.cpp
 
 serialport.obj: serialport.cpp serialport.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o serialport.obj serialport.cpp
+
+er8300.obj: er8300.cpp er8300.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o er8300.obj er8300.cpp
 
 moc_mainwindow.obj: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.obj moc_mainwindow.cpp

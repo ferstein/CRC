@@ -50,9 +50,6 @@
 /* Known Vendor IDs */
 #define VISCA_VENDOR_SONY    0x0020
 
-/* Known Model IDs. The manual can be taken from 
- * http://www.sony.net/Products/ISP/docu_soft/index.html
- */
 #define VISCA_MODEL_IX47x    0x0401          /* from FCB-IX47, FCB-IX470 instruction list */
 #define VISCA_MODEL_EX47xL   0x0402          /* from FCB-EX47L, FCB-EX470L instruction list */
 #define VISCA_MODEL_IX10     0x0404          /* FCB-IX10, FCB-IX10P instruction list */
@@ -89,49 +86,42 @@
 #define VISCA_MODEL_EX980    0x0430
 #define VISCA_MODEL_EX980P   0x0431
 
-#define VISCA_MODEL_H10      0x044A	     /* from H10 tech-manual */
+#define VISCA_MODEL_H10      0x044A	         /* from H10 tech-manual */
+#define VISCA_MODEL_ER8300   0x0700          /* from ER8300 tech-manual*/
+#define VISCA_MODEL_CR8300   0x0701
 
 
 /* Commands/inquiries codes */
 #define VISCA_POWER                      0x00
-#define VISCA_DEVICE_INFO                0x02
-#define VISCA_KEYLOCK                    0x17
-#define VISCA_ID                         0x22
+#define VISCA_DEVICE_INFO                0x02//??
+#define VISCA_KEYLOCK                    0x17//??
+#define VISCA_ID                         0x22//??
 #define VISCA_ZOOM                       0x07
-#define VISCA_ZOOM_STOP                  0x00
-#define VISCA_ZOOM_TELE                  0x02
-#define VISCA_ZOOM_WIDE                  0x03
-#define VISCA_ZOOM_TELE_SPEED            0x20
-#define VISCA_ZOOM_WIDE_SPEED            0x30
+    #define VISCA_ZOOM_TELE                  0x02
+    #define VISCA_ZOOM_WIDE                  0x03
+    #define VISCA_ZOOM_TELE_SPEED            0x20
+    #define VISCA_ZOOM_WIDE_SPEED            0x30
 #define VISCA_ZOOM_VALUE                 0x47
 #define VISCA_ZOOM_FOCUS_VALUE           0x47
 #define VISCA_DZOOM                      0x06
-#define VISCA_DZOOM_OFF                  0x03
-#define VISCA_DZOOM_ON                   0x02
-#define VISCA_DZOOM_LIMIT                0x26 /* implemented for H10 */
-#define VISCA_DZOOM_1X                   0x00
-#define VISCA_DZOOM_1_5X                 0x01
-#define VISCA_DZOOM_2X                   0x02
-#define VISCA_DZOOM_4X                   0x03
-#define VISCA_DZOOM_8X                   0x04
-#define VISCA_DZOOM_12X                  0x05
+    #define VISCA_DZOOM_1X                   0x10
+#define VISCA_DZOOM_VALUE                0x46
 #define VISCA_DZOOM_MODE                 0x36
-#define VISCA_DZOOM_COMBINE              0x00
-#define VISCA_DZOOM_SEPARATE             0x01
+    #define VISCA_DZOOM_COMBINE              0x00
+    #define VISCA_DZOOM_SEPARATE             0x01
 #define VISCA_FOCUS                      0x08
-#define VISCA_FOCUS_STOP                 0x00
-#define VISCA_FOCUS_FAR                  0x02
-#define VISCA_FOCUS_NEAR                 0x03
-#define VISCA_FOCUS_FAR_SPEED            0x20
-#define VISCA_FOCUS_NEAR_SPEED           0x30
+    #define VISCA_FOCUS_FAR                  0x02
+    #define VISCA_FOCUS_NEAR                 0x03
+    #define VISCA_FOCUS_FAR_SPEED            0x20
+    #define VISCA_FOCUS_NEAR_SPEED           0x30
 #define VISCA_FOCUS_VALUE                0x48
-#define VISCA_FOCUS_AUTO                 0x38
-#define VISCA_FOCUS_AUTO_ON              0x02
-#define VISCA_FOCUS_AUTO_OFF             0x03
-#define VISCA_FOCUS_AUTO_MAN             0x10
+#define VISCA_FOCUS_MODE                 0x38
+    #define VISCA_FOCUS_AUTO                 0x02
+    #define VISCA_FOCUS_MANUAL               0x03
+    #define VISCA_FOCUS_AUTO_MAN             0x10
 #define VISCA_FOCUS_ONE_PUSH             0x18
-#define VISCA_FOCUS_ONE_PUSH_TRIG        0x01
-#define VISCA_FOCUS_ONE_PUSH_INF         0x02
+    #define VISCA_FOCUS_ONE_PUSH_TRIG        0x01
+    #define VISCA_FOCUS_ONE_PUSH_INF         0x02//??
 #define VISCA_FOCUS_AUTO_SENSE           0x58
 #define VISCA_FOCUS_AUTO_SENSE_HIGH      0x02
 #define VISCA_FOCUS_AUTO_SENSE_LOW       0x03
@@ -355,6 +345,7 @@
 #define VISCA_ERROR_CMD_NOT_EXECUTABLE   0x41
 
 /* Generic definitions */
+#define VISCA_STOP                       0x00
 #define VISCA_ON                         0x02
 #define VISCA_OFF                        0x03
 #define VISCA_RESET                      0x00
